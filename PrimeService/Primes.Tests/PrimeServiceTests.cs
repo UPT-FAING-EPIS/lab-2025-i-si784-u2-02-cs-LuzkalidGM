@@ -23,6 +23,7 @@ namespace Primes.Tests
         }
 
         [Theory]
+        // Números primos del 2 al 20
         [InlineData(2)]
         [InlineData(3)]
         [InlineData(5)]
@@ -31,13 +32,14 @@ namespace Primes.Tests
         [InlineData(13)]
         [InlineData(17)]
         [InlineData(19)]
-        public void IsPrime_PrimeNumbersBetween2And20_ReturnTrue(int value)
+        public void IsPrime_PrimeNumbers_ReturnTrue(int value)
         {
             var result = _primeService.IsPrime(value);
             Assert.True(result, $"{value} should be prime");
         }
 
         [Theory]
+        // Números NO primos entre 2 y 20
         [InlineData(4)]
         [InlineData(6)]
         [InlineData(8)]
@@ -49,7 +51,7 @@ namespace Primes.Tests
         [InlineData(16)]
         [InlineData(18)]
         [InlineData(20)]
-        public void IsPrime_NonPrimeNumbersBetween2And20_ReturnFalse(int value)
+        public void IsPrime_NonPrimeNumbers_ReturnFalse(int value)
         {
             var result = _primeService.IsPrime(value);
             Assert.False(result, $"{value} should not be prime");
