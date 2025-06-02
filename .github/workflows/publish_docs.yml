@@ -23,8 +23,8 @@ jobs:
 
       - name: Generar metadata y documentación
         run: |
-          docfx metadata ./docfx.json
-          docfx build ./docfx.json
+          docfx metadata ./PrimeService/docfx.json
+          docfx build ./PrimeService/docfx.json
 
       - name: Publicar en GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
