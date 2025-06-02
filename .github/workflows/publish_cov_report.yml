@@ -21,7 +21,7 @@ jobs:
         run: dotnet restore PrimeService/Primes.Lib/Primes.Lib.csproj
 
       - name: Run tests with coverage
-        run: dotnet test Primes.Tests/Primes.Tests.csproj --collect:"XPlat Code Coverage"
+        run: dotnet test PrimeService/Primes.Tests/Primes.Tests.csproj --collect:"XPlat Code Coverage"
 
       - name: Install ReportGenerator
         run: dotnet tool install -g dotnet-reportgenerator-globaltool
