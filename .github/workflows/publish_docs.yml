@@ -24,7 +24,7 @@ jobs:
       - name: Inicializar docfx si no existe
         run: |
           if [ ! -f docfx.json ]; then
-            docfx init -q
+            docfx init 
           fi
 
       - name: Generar metadata y documentación
