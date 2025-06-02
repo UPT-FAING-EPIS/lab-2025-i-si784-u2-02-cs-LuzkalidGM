@@ -21,12 +21,6 @@ jobs:
       - name: Instalar DocFX
         run: dotnet tool update -g docfx
 
-      - name: Inicializar docfx si no existe
-        run: |
-          if [ ! -f docfx.json ]; then
-            docfx init 
-          fi
-
       - name: Generar metadata y documentación
         run: |
           docfx metadata
