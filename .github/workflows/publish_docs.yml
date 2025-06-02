@@ -13,15 +13,21 @@ jobs:
       - name: Clonar repositorio
         uses: actions/checkout@v3
 
-      - name: Instalar .NET
+      - name: Instalar .NET 8
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '6.x'
+          dotnet-version: '8.x'
 
       - name: Instalar DocFX
-        run: dotnet tool install -g docfx
+        run: dotnet tool update -g docfx
 
-      - name: Generar documentación
+      - name: Inicializar docfx si no existe
+        run: |
+          if [ ! -f docfx.json ]; then
+            docfx init -q
+          fi
+
+      - name: Generar metadata y documentación
         run: |
           docfx metadata
           docfx build
