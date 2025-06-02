@@ -18,7 +18,7 @@ jobs:
           dotnet-version: '8.x'
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore PrimeService/Primes.Lib/Primes.Lib.csproj
 
       - name: Run tests with coverage
         run: dotnet test Primes.Tests/Primes.Tests.csproj --collect:"XPlat Code Coverage"
